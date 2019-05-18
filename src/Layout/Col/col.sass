@@ -1,6 +1,6 @@
-@import 'styles/variables.sass'
+@import '../../styles/_config.sass'
 
-@import '../../hocs/Layout/layout-vars'
+@import '../../styles/variables/layout.sass'
 
 // Mixins
 @mixin create-cols()
@@ -43,5 +43,5 @@
         @include create-cols()
 
     &--xl
-      @media #{$screen-size--desktop-mq}
+      @media #{$screen-size--desktop}
         @include create-cols()

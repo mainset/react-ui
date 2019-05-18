@@ -1,4 +1,4 @@
-@import 'styles/variables.sass'
+@import '../../styles/_config.sass'
 
 // NOTE: that is important that direction-column is using for vertically spaced content
 $with-content-direction-as-column: '.ms-layout--direction-column'
@@ -76,7 +76,7 @@ $with-content-direction-as-row: '.ms-layout--direction-row'
         display: none
 
     &-desktop
-      @media #{$screen-size--desktop-mq}
+      @media #{$screen-size--desktop}
         display: none
 
   &--shown
@@ -89,5 +89,5 @@ $with-content-direction-as-row: '.ms-layout--direction-row'
     &-desktop
       display: none
 
-      @media #{$screen-size--desktop-mq}
+      @media #{$screen-size--desktop}
         display: inherit
