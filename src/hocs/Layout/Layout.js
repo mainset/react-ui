@@ -11,7 +11,7 @@ const asLayout = (WrappedComponent) => {
     contentDirection,
     hideOn,
     showOn,
-    ...rest,
+    ...rest
   }) => {
     // NOTE: content has column direction when it's spaced vertically
     const isContentDirectionAsColumn = contentSpace && contentSpace.includes('vertically');
