@@ -3,5 +3,3 @@ export {
   createOverlayBasicComponent,
   initOverlayByIdToggler,
 } from './createOverlayBasicComponent';
-
-export { asLayout } from './Layout';
