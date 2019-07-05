@@ -1,6 +1,7 @@
 import React, { createContext, Component, useState } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 // * Helpers
 const initialState = {
@@ -51,7 +52,7 @@ OverlayProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export function createOverlayBasicComponent({ BASIC_CLASS_NAME }) {
+export function createOverlayBasicComponent({ BASIC_CLASS_NAME, cnBuilderProps }) {
   const classNamePrefix = `${BASIC_CLASS_NAME}-`;
 
   class OverlayBasicComponent extends Component {
@@ -64,6 +65,21 @@ export function createOverlayBasicComponent({ BASIC_CLASS_NAME }) {
 
       this.overlayRoot = window && window.document.getElementById(`${BASIC_CLASS_NAME}-root`);
       // this.overlayElement = document.createElement('div');
+
+      // populate component dynamic class name obj
+      this.dynamicClassName = {};
+
+      if(cnBuilderProps) cnBuilderProps.forEach(
+        ({ propKey, modifier, options, defaultValue }) => {
+          const isPropBool = typeof options === 'boolean';
+
+          const modifierPrefix = modifier || propKey;
+          const modifierValue = isPropBool ? '' : `-${props[propKey] || defaultValue}`;
+
+          const className = `${BASIC_CLASS_NAME}--${modifierPrefix}${modifierValue}`;
+          this.dynamicClassName[className] = props[propKey] || defaultValue;
+        }
+      );
     }
 
     // componentDidMount() {
@@ -91,7 +107,12 @@ export function createOverlayBasicComponent({ BASIC_CLASS_NAME }) {
                     (
                       <div
                         id={id}
-                        className={`${BASIC_CLASS_NAME} ${componentClassName}${className ? ` ${className}` : ''}`}
+                        className={cn(
+                          BASIC_CLASS_NAME,
+                          this.dynamicClassName,
+                          componentClassName,
+                          className,
+                        )}
                       >
                         {children}
                       </div>
