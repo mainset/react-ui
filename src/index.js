@@ -9,4 +9,6 @@ export {
 
   createOverlayBasicComponent,
   initOverlayByIdToggler,
+
+  withTabsManager,
 } from './hocs';

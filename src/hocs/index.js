@@ -5,3 +5,4 @@ export {
 } from './createOverlayBasicComponent';
 
 export { asLayout } from './Layout';
+export { withTabsManager } from './withTabsManager';
