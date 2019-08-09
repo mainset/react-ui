@@ -63,7 +63,7 @@ export function createOverlayBasicComponent({ BASIC_CLASS_NAME, cnBuilderProps }
     constructor(props) {
       super(props);
 
-      this.overlayRoot = window && window.document.getElementById(`${BASIC_CLASS_NAME}-root`);
+      // this.overlayRoot = window && window.document.getElementById(`${BASIC_CLASS_NAME}-root`);
       // this.overlayElement = document.createElement('div');
 
       // populate component dynamic class name obj
@@ -82,9 +82,10 @@ export function createOverlayBasicComponent({ BASIC_CLASS_NAME, cnBuilderProps }
       );
     }
 
-    // componentDidMount() {
-    //   this.overlayRoot.appendChild(this.overlayElement);
-    // }
+    componentDidMount() {
+      // this.overlayRoot.appendChild(this.overlayElement);
+      this.overlayRoot = window && window.document.getElementById(`${BASIC_CLASS_NAME}-root`);
+    }
 
     // componentWillUnmount() {
     //   this.overlayRoot.removeChild(this.overlayElement);
