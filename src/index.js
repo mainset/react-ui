@@ -7,6 +7,7 @@ export { SidebarBasic } from './SidebarBasic';
 export {
   OverlayProvider,
 
+  createListElements,
   createOverlayBasicComponent,
   initOverlayByIdToggler,
 

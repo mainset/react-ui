@@ -1,0 +1,37 @@
+// Component
+.ms-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  // Modifiers
+  &--direction {
+    &-horizontal {
+      flex-direction: row;
+    }
+
+    &-vertical {
+      flex-direction: column;
+    }
+  }
+
+  &--type {
+    &-unstyled {
+      list-style: none;
+    }
+
+    &-ordered {
+      list-style: decimal;
+    }
+
+    // &-unordered {
+    //   list-style: none;
+    // }
+  }
+
+  // Elements
+  &__spacer {
+    margin-bottom: auto;
+    margin-left: auto;
+  }
+}
