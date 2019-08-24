@@ -10,6 +10,7 @@ export {
   asSVG,
   createListElements,
   createOverlayBasicComponent,
+  createSVGMaker,
   initOverlayByIdToggler,
 
   withTabsManager,
