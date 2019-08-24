@@ -1,3 +1,4 @@
+export { asSVG } from './asSVG';
 export { createListElements } from './createListElements';
 
 export {
