@@ -12,6 +12,8 @@ export {
   createListElements,
   createOverlayBasicComponent,
   createSVGMaker,
+  createTypographyElements,
+  // withTypography,
   initOverlayByIdToggler,
 
   withTabsManager,

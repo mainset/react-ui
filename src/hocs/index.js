@@ -7,5 +7,10 @@ export {
   initOverlayByIdToggler,
 } from './createOverlayBasicComponent';
 
+export { createSVGMaker } from './createSVGMaker';
 export { asLayout } from './Layout';
+export {
+  createTypographyElements,
+  withTypography,
+} from './Typography';
 export { withTabsManager } from './withTabsManager';
