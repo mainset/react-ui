@@ -3,11 +3,20 @@ import PropTypes from 'prop-types';
 
 import { asLayout } from '../../hocs/Layout';
 
-export const Container = ({ children, className, gapSize, width }) => (
+export const Container = ({
+  children,
+  className,
+
+  gapSize,
+  width,
+
+  ...props
+}) => (
   createElement(
     'div',
     {
       className: `ms-container ms-container--width-${width} ms-container--gap-${gapSize} ${className && ` ${className}`}`,
+      ...props,
     },
     children
   )

@@ -3,8 +3,18 @@ import PropTypes from 'prop-types';
 
 // import withTypography from '../Typography';
 
-const TextSection = ({ children, className, ...props }) => (
-  createElement('span', { className: `ms-text-section${className && ` ${className}`}`, ...props }, children)
+const TextSection = ({
+  children,
+  className,
+
+  ...props
+}) => createElement(
+  'span',
+  {
+    className: `ms-text-section${className && ` ${className}`}`,
+    ...props,
+  },
+  children,
 );
 
 TextSection.defaultProps = {
