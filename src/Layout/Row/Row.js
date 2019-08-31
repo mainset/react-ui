@@ -7,8 +7,11 @@ import { asLayout } from '../../hocs/Layout';
 export const Row = ({
   children,
   className,
+
   noGutters,
   withHorizontalScroll,
+
+  ...props
 }) => (
   createElement(
     'div',
@@ -21,6 +24,7 @@ export const Row = ({
         },
         className,
       ),
+      ...props,
     },
     children
   )

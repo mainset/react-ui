@@ -4,9 +4,19 @@ import PropTypes from 'prop-types';
 // import withTypography from '../Typography';
 
 const Heading = ({
-  children, className, hSize, ...props
-}) => (
-  createElement(`h${hSize}`, { className: `ms-heading${className && ` ${className}`}`, ...props }, children)
+  children,
+  className,
+
+  hSize,
+
+  ...props
+}) => createElement(
+  `h${hSize}`,
+  {
+    className: `ms-heading${className && ` ${className}`}`,
+    ...props,
+  },
+  children,
 );
 
 Heading.defaultProps = {

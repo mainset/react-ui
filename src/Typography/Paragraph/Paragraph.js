@@ -3,8 +3,18 @@ import PropTypes from 'prop-types';
 
 // import withTypography from '../Typography';
 
-const Paragraph = ({ children, className, ...props }) => (
-  createElement('p', { className: `ms-paragraph${className && ` ${className}`}`, ...props }, children)
+const Paragraph = ({
+  children,
+  className,
+
+  ...props
+}) => createElement(
+  'p',
+  {
+    className: `ms-paragraph${className && ` ${className}`}`,
+    ...props,
+  },
+  children
 );
 
 Paragraph.defaultProps = {

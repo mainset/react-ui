@@ -16,7 +16,9 @@ export const Col = ({
   xl,
 
   offset,
-  noSpacing
+  noSpacing,
+
+  ...props
 }) => (
   createElement(
     'div',
@@ -34,7 +36,8 @@ export const Col = ({
           'ms-col--no-spacing': noSpacing
         },
         className,
-      )
+      ),
+      ...props,
     },
     children
   )
