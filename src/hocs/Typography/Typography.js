@@ -8,7 +8,7 @@ import BaseTextSection from '../../Typography/TextSection';
 
 function excludeClassParamsFromProps(params, props) {
   const propForClasses = Object.values(params);
-  const restPropKeys = Object.values(props).filter((propKey) => !propForClasses.includes(propKey));
+  const restPropKeys = Object.keys(props).filter((propKey) => !propForClasses.includes(propKey));
   const result = { classObj: {}, rest: {} };
 
   // populate result rest
@@ -31,7 +31,16 @@ function excludeClassParamsFromProps(params, props) {
 
 export const withTypography = (WrappedComponent, params) => {
   const WrappedComponentWithTypography = ({
-    children, align, className, size, transform, weight, ...props
+    children,
+    className,
+
+    truncate,
+    align,
+    size,
+    transform,
+    weight,
+
+    ...props
   }) => {
     const { classObj, rest } = excludeClassParamsFromProps(params, props);
     return createElement(
@@ -40,6 +49,7 @@ export const withTypography = (WrappedComponent, params) => {
         className: cn(
           'ms-typography',
           {
+            'ms-typography--truncate': truncate,
             [`ms-typography--align-${align}`]: align,
             [`ms-typography--size-${size}`]: size,
             [`ms-typography--transform-${transform}`]: transform,
@@ -62,6 +72,7 @@ export const withTypography = (WrappedComponent, params) => {
     align: '',
     size: '',
     transform: '',
+    truncate: false,
   };
 
   WrappedComponentWithTypography.propTypes = {
@@ -74,6 +85,7 @@ export const withTypography = (WrappedComponent, params) => {
     align: PropTypes.oneOf(['', 'center', 'justify', 'right']),
     size: PropTypes.oneOf(['', 'xx-small', 'x-small', 'smaller', 'sm', 'md', 'lg', 'larger', 'x-large', 'xx-large']),
     transform: PropTypes.oneOf(['', 'capitalize', 'uppercase']),
+    truncate: PropTypes.bool,
   };
 
   return WrappedComponentWithTypography;
