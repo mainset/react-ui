@@ -1,5 +1,6 @@
 import { createElement } from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 const Spacer = () => createElement(
   'div',
@@ -12,6 +13,7 @@ const createListElements = ({ baseClassName }) => {
     className,
 
     direction,
+    justify,
     type,
 
     ...props
@@ -19,7 +21,15 @@ const createListElements = ({ baseClassName }) => {
     createElement(
       'ul',
       {
-        className: `${className} ${baseClassName} ms-list ms-list--direction-${direction} ms-list--type-${type}`,
+        className: cn(
+          className,
+          baseClassName,
+          `ms-list ms-list--direction-${direction}`,
+          `ms-list--type-${type}`,
+          {
+            [`ms-list--justify-${justify}`]: justify,
+          },
+        ),
         ...props,
       },
       children,
@@ -29,6 +39,7 @@ const createListElements = ({ baseClassName }) => {
   List.defaultProps = {
     className: '',
     direction: 'horizontal',
+    justify: '',
     type: 'unstyled',
   };
 
@@ -37,6 +48,7 @@ const createListElements = ({ baseClassName }) => {
     className: PropTypes.string,
 
     direction: PropTypes.oneOf(['horizontal', 'vertical']),
+    justify: PropTypes.oneOf(['', 'center', 'end']),
     type: PropTypes.oneOf(['unstyled', 'oredered'/* 'unordered', */]),
   };
 
