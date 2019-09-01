@@ -1,0 +1,19 @@
+.ms-break {
+  border: none;
+
+  &.ms-break {
+    &--direction {
+      &-horizontal {
+        height: 1px;
+      }
+
+      &-vertical {
+        width: 1px;
+      }
+    }
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+}

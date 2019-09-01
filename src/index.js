@@ -1,4 +1,5 @@
 // ui-elements
+export { Hr } from './Hr';
 export { Container, Row, Col } from './Layout';
 export { ModalBasic } from './ModalBasic';
 export { SidebarBasic } from './SidebarBasic';
