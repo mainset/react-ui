@@ -8,6 +8,7 @@ export {
 } from './createOverlayBasicComponent';
 
 export { createSVGMaker } from './createSVGMaker';
+export { extendClassName } from './extendClassName';
 export { asLayout } from './Layout';
 export {
   createTypographyElements,
