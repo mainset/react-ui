@@ -1,0 +1,12 @@
+@import './utilities/_spacing.scss';
+
+@mixin build-ms-utilities($config) {
+  .msu {
+    @if map-has-key($config, 'spacing') {
+      &-sp {
+        $spacing-sizes: map-get($config, 'spacing');
+        @include build-spacing-utilities($spacing-sizes);
+      }
+    }
+  }
+}

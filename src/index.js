@@ -15,6 +15,8 @@ export {
   createOverlayBasicComponent,
   createSVGMaker,
   createTypographyElements,
+
+  extendClassName,
   // withTypography,
   initOverlayByIdToggler,
 
