@@ -22,3 +22,7 @@ export {
 
   withTabsManager,
 } from './hocs';
+
+export {
+  msDebounce,
+} from './utils';
