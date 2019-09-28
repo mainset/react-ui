@@ -24,5 +24,9 @@ export {
 } from './hocs';
 
 export {
+  useCallbackDebounce,
+} from './hooks';
+
+export {
   msDebounce,
 } from './utils';
