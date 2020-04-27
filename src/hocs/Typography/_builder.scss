@@ -1,7 +1,7 @@
 @import '../../styles/_mixins.scss';
 
-@mixin build-typography($config) {
-  .ms-typography {
+@mixin build-typography($config, $selector: '.ms-typography') {
+  #{$selector} {
     &--size {
       @each $size in ('xx-small', 'x-small', 'smaller', 'sm', 'md', 'lg', 'larger', 'x-large', 'xx-large') {
         $configSize: map-get($config, 'size');
