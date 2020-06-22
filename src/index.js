@@ -4,6 +4,7 @@ export { Container, Row, Col } from './Layout';
 export { ModalBasic } from './ModalBasic';
 export { Popover } from './Popover';
 export { SidebarBasic } from './SidebarBasic';
+export { Spacing } from './Spacing';
 export { TextTag } from './TextTag';
 // export { Heading, Paragraph, TextSection } from './Typography';
 
