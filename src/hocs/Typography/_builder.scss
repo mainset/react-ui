@@ -2,6 +2,15 @@
 
 @mixin build-typography($config, $selector: '.ms-typography') {
   #{$selector} {
+    &--color {
+      $configColor: map-get($config, 'color');
+      @each $modifier, $value in $configColor {
+        &-#{$modifier} {
+          color: $value;
+        }
+      }
+    }
+
     &--size {
       @each $size in ('xx-small', 'x-small', 'smaller', 'sm', 'md', 'lg', 'larger', 'x-large', 'xx-large') {
         $configSize: map-get($config, 'size');
