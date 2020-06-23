@@ -9,9 +9,11 @@ const TextTag = ({
   children,
 
   align,
-  color,
   size,
   weight,
+
+  color,
+  family,
 
   ...props
 }) =>
@@ -23,6 +25,7 @@ const TextTag = ({
         {
           [`ms-text--align-${align}`]: align,
           [`ms-text--color-${color}`]: color,
+          [`ms-text--family-${family}`]: family,
           [`ms-text--size-${size}`]: size,
           [`ms-text--weight-${weight}`]: weight,
         },
@@ -37,7 +40,6 @@ TextTag.defaultProps = {
   className: '',
 
   align: '',
-  color: '',
   weight: 'normal',
 };
 
@@ -48,7 +50,6 @@ TextTag.propTypes = {
   as: PropTypes.oneOf(['h1', 'h2', 'h3', 'p', 'span', 'div', 'a']).isRequired,
 
   align: PropTypes.oneOf(['', 'center', 'right']),
-  color: PropTypes.oneOf(['']),
   size: PropTypes.oneOf([
     'xx-small',
     'x-small',
@@ -61,6 +62,10 @@ TextTag.propTypes = {
     'xx-large',
   ]).isRequired,
   weight: PropTypes.oneOf(['lighter', 'normal', 'bolder', 'bold']),
+
+  // redefine
+  color: PropTypes.oneOf(['']),
+  family: PropTypes.oneOf(['']),
 };
 
 export default TextTag;

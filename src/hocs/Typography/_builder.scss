@@ -11,10 +11,19 @@
       }
     }
 
+    &--family {
+      $configFamily: map-get($config, 'family');
+      @each $modifier, $value in $configFamily {
+        &-#{$modifier} {
+          font-family: $value;
+        }
+      }
+    }
+
     &--size {
       @each $size in ('xx-small', 'x-small', 'smaller', 'sm', 'md', 'lg', 'larger', 'x-large', 'xx-large') {
         $configSize: map-get($config, 'size');
-        @if map-has-key($configSize, $size) {
+        @if $configSize != null and map-has-key($configSize, $size) {
           &-#{$size} {
             @include map-to-style(map-get($configSize, $size));
           }
@@ -23,4 +32,3 @@
     }
   }
 }
-
