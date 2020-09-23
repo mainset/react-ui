@@ -12,7 +12,7 @@ const useCallbackDebounce = (dFunc, dependencies, ...dArgs) => {
   const debounceFunc = msDebounce(dFunc, ...dArgs);
 
   const callbackDebounce = useCallback((...args) => {
-    debounceFunc(debounceRef, args);
+    debounceFunc(debounceRef, ...args);
   }, []);
 
   return callbackDebounce;
